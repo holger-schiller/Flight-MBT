@@ -11,28 +11,28 @@ f=Parameter("PassengerName")
 g=Parameter("SelectedRow")
 
 ' If we're not on the BOOK FLIGHT screen then exit
-If WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Exist Then
-	WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "BOOK FLIGHT"
+If WpfWindow("OpenText MyFlight Sample Application").WpfTabStrip("WpfTabStrip").Exist Then
+	WpfWindow("OpenText MyFlight Sample Application").WpfTabStrip("WpfTabStrip").Select "BOOK FLIGHT"
 Else
 	Reporter.ReportEvent micFail, "Book Flight - Wrong screen", "Not on BOOK FLIGHT screen. Exiting..."
 	ExitAction
 End If
 
-WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("fromCity").Select a @@ hightlight id_;_2135054328_;_script infofile_;_ZIP::ssf4.xml_;_
-WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("toCity").Select b @@ hightlight id_;_1948026184_;_script infofile_;_ZIP::ssf8.xml_;_
-WpfWindow("Micro Focus MyFlight Sample").WpfCalendar("datePicker").SetDate c @@ hightlight id_;_2135059656_;_script infofile_;_ZIP::ssf10.xml_;_
-WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("Class").Select d
-WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("numOfTickets").Select e
-WpfWindow("Micro Focus MyFlight Sample").WpfButton("FIND FLIGHTS").Click
-WpfWindow("Micro Focus MyFlight Sample").WpfTable("flightsDataGrid").SelectRow g
-WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT FLIGHT").Click
-WpfWindow("Micro Focus MyFlight Sample").WpfEdit("passengerName").Set f
-WpfWindow("Micro Focus MyFlight Sample").WpfButton("ORDER").Click
+WpfWindow("OpenText MyFlight Sample Application").WpfComboBox("fromCity").Select a @@ hightlight id_;_2135054328_;_script infofile_;_ZIP::ssf4.xml_;_
+WpfWindow("OpenText MyFlight Sample Application").WpfComboBox("toCity").Select b @@ hightlight id_;_1948026184_;_script infofile_;_ZIP::ssf8.xml_;_
+WpfWindow("OpenText MyFlight Sample Application").WpfCalendar("datePicker").SetDate c @@ hightlight id_;_2135059656_;_script infofile_;_ZIP::ssf10.xml_;_
+WpfWindow("OpenText MyFlight Sample Application").WpfComboBox("Class").Select d
+WpfWindow("OpenText MyFlight Sample Application").WpfComboBox("numOfTickets").Select e
+WpfWindow("OpenText MyFlight Sample Application").WpfButton("FIND FLIGHTS").Click
+WpfWindow("OpenText MyFlight Sample Application").WpfTable("flightsDataGrid").SelectRow g
+WpfWindow("OpenText MyFlight Sample Application").WpfButton("SELECT FLIGHT").Click
+WpfWindow("OpenText MyFlight Sample Application").WpfEdit("passengerName").Set f
+WpfWindow("OpenText MyFlight Sample Application").WpfButton("ORDER").Click
 
 Wait 2 ' The Exist statement below seems to find a little box that exists if we run too fast - so the Wait is necessary
 'Wait for Completed message to appear (about 3-4 seconds)
-If WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderCompletedMessage").Exist (4) Then
-	WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderCompletedMessage").Output CheckPoint("OrderCompletedNumber") @@ hightlight id_;_1929008192_;_script infofile_;_ZIP::ssf20.xml_;_
+If WpfWindow("OpenText MyFlight Sample Application").WpfObject("OrderCompletedMessage").Exist (4) Then
+	WpfWindow("OpenText MyFlight Sample Application").WpfObject("OrderCompletedMessage").Output CheckPoint("OrderCompletedNumber") @@ hightlight id_;_1929008192_;_script infofile_;_ZIP::ssf20.xml_;_
 End  If
 
 Parameter("PassengerNameOut") = f

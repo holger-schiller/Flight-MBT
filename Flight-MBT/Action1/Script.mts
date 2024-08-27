@@ -7,10 +7,10 @@ b=Parameter("Password")
 'Start the Flight GUI Appolication
 SystemUtil.Run "C:\Program Files (x86)\Micro Focus\UFT One\samples\Flights Application\FlightsGUI.exe"
 
-If WpfWindow("Micro Focus MyFlight Sample").Exist Then
-	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("agentName").Set a @@ hightlight id_;_1950327744_;_script infofile_;_ZIP::ssf2.xml_;_
-	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("password").Set b @@ hightlight id_;_2137164136_;_script infofile_;_ZIP::ssf3.xml_;_
-	WpfWindow("Micro Focus MyFlight Sample").WpfButton("OK").Click
+If WpfWindow("OpenText MyFlight Sample Application").Exist Then
+	WpfWindow("OpenText MyFlight Sample Application").WpfEdit("agentName").Set a @@ hightlight id_;_1950327744_;_script infofile_;_ZIP::ssf2.xml_;_
+	WpfWindow("OpenText MyFlight Sample Application").WpfEdit("password").Set b @@ hightlight id_;_2137164136_;_script infofile_;_ZIP::ssf3.xml_;_
+	WpfWindow("OpenText MyFlight Sample Application").WpfButton("OK").Click
 Else
 	Reporter.ReportEvent micFail, "Login - Flight GUI not found", "Flight GUI application window not found. Exiting..."
 	ExitTest
